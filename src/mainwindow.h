@@ -8,7 +8,9 @@
 #include <QStatusBar>
 #include <QMessageBox>
 #include <QListView>
+#include <QTimer>
 #include "models/cocktailmodel.h"
+#include "src/strengthchartwidget.h"
 
 class MainWindow : public QMainWindow
 {
@@ -22,12 +24,18 @@ private slots:
     void onAddCocktail();
     void onDeleteCocktail();
     void showAbout();
+    void animateChart();
+    void toggleTimer();
+    void clearSelection();
 
 private:
     void setupUi();
+    void updateChartData();
 
     QListView *m_listView;
     CocktailModel *m_model;
+    StrengthChartWidget *m_chart;
+    QTimer *m_timer;
 };
 
 #endif // MAINWINDOW_H

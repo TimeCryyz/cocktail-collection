@@ -23,6 +23,8 @@ public:
     void addCocktail(const Cocktail &cocktail);
     void removeCocktail(int row);
 
+    QList<Cocktail> getCocktails() const { return m_cocktails; }
+
 private:
     QList<Cocktail> m_cocktails;
 };
